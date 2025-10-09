@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
         // Animator Parameters
         anim.SetBool("walk", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
-
+        anim.SetFloat("velocityY", body.velocity.y);
+        
         // Jump Trigger
         if (Input.GetKey(KeyCode.Space) && grounded)
             Jump();
