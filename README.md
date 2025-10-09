@@ -64,7 +64,7 @@ A prova de conceito proposta inclui:
 
 3. Execute a cena principal
 
-4. Teste os controles:
+4. Teste os controles
 
 - [A / D] → Andar
 
