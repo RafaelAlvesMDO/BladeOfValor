@@ -34,8 +34,11 @@ A prova de conceito proposta inclui:
 | Loja / Melhoria simples                | ❌     | Permite gastar moedas adquiridas para melhorar atributos. |
 
 ❌ - Indica que ainda não foi desenvolvido;
+
 ⚙️ - Indica que está em desenvolvimento;
+
 ⚠️ - Indica que está sendo atualizado ou corrigido;
+
 ✅ - Indica que a funcionalidade já foi desenvolvida;
 
 ---
@@ -64,7 +67,7 @@ A prova de conceito proposta inclui:
 
 3. Execute a cena principal
 
-4. Teste os controles
+4. Teste os controles:
 
 - [A / D] → Andar
 
