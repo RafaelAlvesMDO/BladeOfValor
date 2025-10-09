@@ -3,7 +3,7 @@ guid: b47925f67f24635448aca5d3496f99d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -219,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_00
+      name: walk_00
       rect:
         serializedVersion: 2
         x: 0
@@ -240,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_01
+      name: walk_01
       rect:
         serializedVersion: 2
         x: 64
@@ -261,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_02
+      name: walk_02
       rect:
         serializedVersion: 2
         x: 128
@@ -282,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_03
+      name: walk_03
       rect:
         serializedVersion: 2
         x: 192
@@ -303,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_04
+      name: walk_04
       rect:
         serializedVersion: 2
         x: 256
@@ -324,7 +328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_05
+      name: walk_05
       rect:
         serializedVersion: 2
         x: 320
@@ -345,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_06
+      name: walk_06
       rect:
         serializedVersion: 2
         x: 384
@@ -366,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_07
+      name: walk_07
       rect:
         serializedVersion: 2
         x: 448
@@ -843,17 +847,16 @@ TextureImporter:
       jump_00: -71903499
       jump_01: -1790877580
       jump_02: 924269458
-      run_00: 1113993236
-      run_01: -2104743949
-      run_02: -239854044
-      run_03: 386174512
-      run_04: 1556633907
-      run_05: 1780164116
-      run_06: -371730572
-      run_07: 400702967
-  spritePackingTag: 
+      walk_00: 1113993236
+      walk_01: -2104743949
+      walk_02: -239854044
+      walk_03: 386174512
+      walk_04: 1556633907
+      walk_05: 1780164116
+      walk_06: -371730572
+      walk_07: 400702967
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
