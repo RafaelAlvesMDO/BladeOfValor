@@ -28,7 +28,7 @@ A prova de conceito proposta inclui:
 | -------------------------------------- | ------ | --------------------------------------------------------- |
 | Movimentação básica (andar/pular/dash) | ✅     | Implementada com animações e física ajustada.             |
 | Combate com espada                     | ⚙️     | Ataques com animação, colisão e dano funcional.           |
-| Primeira fase curta                    | ❌     | Fase inicial jogável com obstáculos, inimigos e cenário.  |
+| Primeira fase curta                    | ⚙️     | Fase inicial jogável com obstáculos, inimigos e cenário.  |
 | Inimigo simples                        | ❌     | Inimigo com patrulha e comportamento básico de ataque.    |
 | HUD de vida e moedas                   | ❌     | Exibe informações em tempo real do jogador.               |
 | Sistema de morte e reinício            | ❌     | Jogador retorna ao início mantendo as moedas acumuladas.  |
