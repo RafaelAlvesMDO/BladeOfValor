@@ -75,6 +75,6 @@ A prova de conceito proposta inclui:
 
 - [ Espaço ] → Pular
 
-- [ Shift ] → Dash
-
 - [ Botão esquerdo do mouse ] → Ataque
+
+- [ Q ] → Corte Aéreo
