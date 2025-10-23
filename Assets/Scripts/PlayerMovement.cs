@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
-    
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
