@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player;
     [SerializeField] private Tilemap map;
     [SerializeField] private float smoothTime = 0.2f;
 
@@ -14,16 +15,42 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        // Calculate Visible Camera Width
+        // Find the Player again when change scenes
+        player = GameObject.FindWithTag("Player")?.transform;
+
         Camera cam = Camera.main;
         halfCameraWidth = cam.orthographicSize * cam.aspect;
 
-        // Get Tilemap Limit
-        Bounds mapBounds = map.localBounds;
+        if (map == null)
+            map = FindObjectOfType<Tilemap>();
 
-        // Horizontal Limit
-        minX = mapBounds.min.x + halfCameraWidth;
-        maxX = mapBounds.max.x - halfCameraWidth;
+        if (map != null)
+        {
+            Bounds mapBounds = map.localBounds;
+            minX = mapBounds.min.x + halfCameraWidth;
+            maxX = mapBounds.max.x - halfCameraWidth;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Update references when changing scenes
+        player = GameObject.FindWithTag("Player")?.transform;
+        map = FindObjectOfType<Tilemap>();
+
+        if (map != null)
+        {
+            Bounds mapBounds = map.localBounds;
+            minX = mapBounds.min.x + halfCameraWidth;
+            maxX = mapBounds.max.x - halfCameraWidth;
+        }
     }
 
     void Update()
@@ -31,11 +58,8 @@ public class CameraController : MonoBehaviour
         if (player == null)
             return;
 
-        // Limit Position X inside the Limits
         float targetX = Mathf.Clamp(player.position.x, minX, maxX);
         Vector3 targetPosition = new Vector3(targetX, transform.position.y, transform.position.z);
-
-        // Smooth Moviment
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
