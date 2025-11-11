@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gareth Sprites_24
+      name: Hurt
       rect:
         serializedVersion: 2
         x: 0
@@ -821,7 +821,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gareth Sprites_24: -1776666062
+      Hurt: -1776666062
       block_00: -1176661018
       block_01: 1118152000
       dead_00: 1506746516
