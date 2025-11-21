@@ -38,10 +38,25 @@ public class AirSlashProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Collectible") || collision.CompareTag("Player"))
+            return;
+
+        // Detecta inimigos
+        if (collision.CompareTag("Enemy"))
+        {
+            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(1f); // aqui você coloca o valor de dano que quiser
+            }
+        }
+
+        // Continua a lógica de efeito visual
         hit = true;
         boxCollider.enabled = false;
         anim.SetTrigger("fade");
     }
+
 
     public void SetDirection(float _direction)
     {
