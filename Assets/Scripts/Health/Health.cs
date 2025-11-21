@@ -9,6 +9,9 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
+    [SerializeField] private AudioClip HurtSound;
+    [SerializeField] private AudioClip DeathSound;
+
     void Start()
     {
         currentHealth = startingHealth;
@@ -22,6 +25,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
+            SoundManager.instance.PlaySound(HurtSound);
         }
         else
         {
@@ -30,9 +34,19 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+                SoundManager.instance.PlaySound(DeathSound);
             }
         }
     }
+
+    // public void Respawn()
+    // {
+    //     dead = false;
+    //     AddHealth(startingHealth);
+    //     anim.Play("Idle");
+
+    //     GetComponent<PlayerMovement>().enabled = true;
+    // }
 
     public void Heal(double hp)
     {
