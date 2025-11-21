@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
 
+    [SerializeField] private AudioClip JumpSound;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        SoundManager.instance.PlaySound(JumpSound);
         body.velocity = new Vector2(body.velocity.x, jumpingSpeed);
         anim.SetTrigger("jump");
     }
