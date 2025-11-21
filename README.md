@@ -14,7 +14,7 @@ O objetivo é validar os elementos essenciais do jogo antes da expansão para fa
 A prova de conceito proposta inclui:
 
 - Uma fase curta (primeira fase);
-- Movimentação básica (andar, pular, dash);
+- Movimentação básica (andar, pular, bloqueio);
 - Combate funcional com espada;
 - Um tipo de inimigo simples;
 - HUD com vida e moedas;
@@ -26,11 +26,11 @@ A prova de conceito proposta inclui:
 
 | Funcionalidade                         | Status | Descrição                                                 |
 | -------------------------------------- | ------ | --------------------------------------------------------- |
-| Movimentação básica (andar/pular/dash) | ✅     | Implementada com animações e física ajustada.             |
+| Movimentação básica (andar/pular)      | ✅     | Implementada com animações e física ajustada.             |
 | Combate com espada                     | ⚙️     | Ataques com animação, colisão e dano funcional.           |
 | Primeira fase curta                    | ⚙️     | Fase inicial jogável com obstáculos, inimigos e cenário.  |
-| Inimigo simples                        | ❌     | Inimigo com patrulha e comportamento básico de ataque.    |
-| HUD de vida e moedas                   | ❌     | Exibe informações em tempo real do jogador.               |
+| Inimigo simples                        | ⚙️     | Inimigo com patrulha e comportamento básico de ataque.    |
+| HUD de vida e moedas                   | ✅     | Exibe informações em tempo real do jogador.               |
 | Sistema de morte e reinício            | ❌     | Jogador retorna ao início mantendo as moedas acumuladas.  |
 | Loja / Melhoria simples                | ❌     | Permite gastar moedas adquiridas para melhorar atributos. |
 
@@ -76,5 +76,7 @@ A prova de conceito proposta inclui:
 - [ Espaço ] → Pular
 
 - [ Botão esquerdo do mouse ] → Ataque
+
+- [ Botão direito do mouse ] → Bloqueio
 
 - [ Q ] → Corte Aéreo

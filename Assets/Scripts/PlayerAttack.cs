@@ -4,13 +4,21 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Cooldowns")]
     private float attackCooldown = 0.6f;
-    private float airSlashCooldown = 10f;
+    private float airSlashCooldown = 3f;
     private float cooldownTimer = Mathf.Infinity;
+    [SerializeField] private Mana mana;
+
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private float attackDamage = 1f;
 
     [Header("References")]
     [SerializeField] private Transform startPoint; // Origin point of the Air Slash attack
     [SerializeField] private GameObject[] airSlashes; 
     private Animator anim;
+
+    [SerializeField] private AudioClip SwordHitSound;
+    [SerializeField] private AudioClip AirSlashSound;
 
     private void Awake()
     {
@@ -35,6 +43,9 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         if (anim == null)
             Debug.LogError("Animator cannot found the Player!");
+        
+        if (mana == null)
+            mana = GetComponent<Mana>();
     }
 
     private void Update()
@@ -50,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        SoundManager.instance.PlaySound(SwordHitSound);
         if (anim != null)
         {
             anim.SetTrigger("attack");
@@ -59,6 +71,23 @@ public class PlayerAttack : MonoBehaviour
 
     private void AirSlash()
     {
+        SoundManager.instance.PlaySound(AirSlashSound);
+        double manaCost = 0.2;
+
+        if (mana == null)
+        {
+            Debug.LogWarning("Mana não encontrada no Player!");
+            return;
+        }
+
+        if (mana.currentMana <= 0)
+        {
+            Debug.Log("Mana insuficiente para usar AirSlash!");
+            return;
+        }
+
+        mana.UseMana(manaCost);
+
         if (anim != null)
         {
             anim.SetTrigger("attack");
@@ -94,4 +123,19 @@ public class PlayerAttack : MonoBehaviour
 
         return 0;
     }
+
+    public void DealDamage()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(startPoint.position, attackRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(attackDamage);
+            }
+        }
+    }
+
 }
